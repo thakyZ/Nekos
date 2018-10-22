@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <TerrainDef>
+    <defName>NekoSoil</defName>
+    <label>Neko tilled ice</label>
+    <texturePath>Terrain/NekoSoil</texturePath>
+    <edgeType>FadeRough</edgeType>
+    <renderPrecedence>340</renderPrecedence>
+    <pathCost>2</pathCost>
+    <placeWorkers>
+      <li>Nekos.Placeworker_Neko</li>
+    </placeWorkers>
+    <statBases>
+      <Beauty>0</Beauty>
+      <WorkToBuild>600</WorkToBuild>
+    </statBases>
+    <scatterType>Rocky</scatterType>
+    <affordances>
+      <li>Light</li>
+      <li>Heavy</li>
+      <li>GrowSoil</li>
+      <li>Diggable</li>
+    </affordances>
+    <generatedFilth>Filth_Dirt</generatedFilth>
+    <fertility>1.0</fertility>
+    <takeFootprints>True</takeFootprints>
+    <constructEffect>ConstructDirt</constructEffect>
+    <designationCategory>Floors</designationCategory>
+  </TerrainDef>
+
+  <TerrainDef>
+    <defName>NekoSoilRich</defName>
+    <label>Neko processed soil</label>
+    <texturePath>Terrain/NekoAdvancedSoil</texturePath>
+    <edgeType>FadeRough</edgeType>
+    <renderPrecedence>335</renderPrecedence>
+    <pathCost>2</pathCost>
+    <placeWorkers>
+      <li>Nekos.Placeworker_Neko</li>
+    </placeWorkers>
+    <costList>
+      <Steel>3</Steel>
+      <Plasteel>1</Plasteel>
+    </costList>
+    <statBases>
+      <Beauty>0</Beauty>
+      <WorkToBuild>600</WorkToBuild>
+    </statBases>
+    <affordances>
+      <li>Light</li>
+      <li>Heavy</li>
+      <li>GrowSoil</li>
+      <li>Diggable</li>
+    </affordances>
+    <generatedFilth>Filth_Dirt</generatedFilth>
+    <fertility>1.5</fertility>
+    <takeFootprints>True</takeFootprints>
+    <constructEffect>ConstructDirt</constructEffect>
+    <designationCategory>Floors</designationCategory>
+  </TerrainDef>
+</Defs>

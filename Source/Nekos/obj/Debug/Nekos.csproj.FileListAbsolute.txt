@@ -1,0 +1,8 @@
+C:\Users\thaky\Development\Git\Games\RimWorld\Nekos\Source\Orassans\bin\Debug\Nekos.dll
+C:\Users\thaky\Development\Git\Games\RimWorld\Nekos\Source\Orassans\bin\Debug\Nekos.pdb
+C:\Users\thaky\Development\Git\Games\RimWorld\Nekos\Source\Orassans\bin\Debug\0Harmony.dll
+C:\Users\thaky\Development\Git\Games\RimWorld\Nekos\Source\Orassans\obj\Debug\Nekos.csprojAssemblyReference.cache
+C:\Users\thaky\Development\Git\Games\RimWorld\Nekos\Source\Orassans\obj\Debug\Nekos.csproj.CoreCompileInputs.cache
+C:\Users\thaky\Development\Git\Games\RimWorld\Nekos\Source\Orassans\obj\Debug\Nekos.csproj.CopyComplete
+C:\Users\thaky\Development\Git\Games\RimWorld\Nekos\Source\Orassans\obj\Debug\Nekos.dll
+C:\Users\thaky\Development\Git\Games\RimWorld\Nekos\Source\Orassans\obj\Debug\Nekos.pdb

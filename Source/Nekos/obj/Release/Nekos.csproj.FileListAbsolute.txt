@@ -1,0 +1,15 @@
+C:\Users\thaky\Development\Git\Games\RimWorld\Nekos\Source\Orassans\bin\Release\Nekos.dll
+C:\Users\thaky\Development\Git\Games\RimWorld\Nekos\Source\Orassans\bin\Release\Nekos.pdb
+C:\Users\thaky\Development\Git\Games\RimWorld\Nekos\Source\Orassans\bin\Release\0Harmony.dll
+C:\Users\thaky\Development\Git\Games\RimWorld\Nekos\Source\Orassans\obj\Release\Nekos.csprojAssemblyReference.cache
+C:\Users\thaky\Development\Git\Games\RimWorld\Nekos\Source\Orassans\obj\Release\Nekos.csproj.CoreCompileInputs.cache
+C:\Users\thaky\Development\Git\Games\RimWorld\Nekos\Source\Orassans\obj\Release\Nekos.csproj.CopyComplete
+C:\Users\thaky\Development\Git\Games\RimWorld\Nekos\Source\Orassans\obj\Release\Nekos.dll
+C:\Users\thaky\Development\Git\Games\RimWorld\Nekos\Source\Orassans\obj\Release\Nekos.pdb
+C:\Users\thaky\Development\Git\Games\RimWorld\Nekos\Assemblies\Nekos.dll
+C:\Users\thaky\Development\Git\Games\RimWorld\Nekos\Assemblies\Nekos.pdb
+C:\Users\thaky\Development\Git\Games\RimWorld\Nekos\Source\Nekos\obj\Release\Nekos.csprojAssemblyReference.cache
+C:\Users\thaky\Development\Git\Games\RimWorld\Nekos\Source\Nekos\obj\Release\Nekos.csproj.CoreCompileInputs.cache
+C:\Users\thaky\Development\Git\Games\RimWorld\Nekos\Source\Nekos\obj\Release\Nekos.csproj.CopyComplete
+C:\Users\thaky\Development\Git\Games\RimWorld\Nekos\Source\Nekos\obj\Release\Nekos.dll
+C:\Users\thaky\Development\Git\Games\RimWorld\Nekos\Source\Nekos\obj\Release\Nekos.pdb

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <RulePackDef>
+    <defName>NamerPersonNeko</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>name->[nekcat] [nekbreed]</li>
+        <li>name->[maleneks] '[nekcat]' [nekbreed]</li>
+        <li>name->[femaleneks] '[nekcat]' [nekbreed]</li>
+      </rulesStrings>
+      <rulesRaw>
+        <li Class="Rule_File">
+          <keyword>maleneks</keyword>
+          <path>Names/Animal_Male</path>
+        </li>
+
+        <li Class="Rule_File">
+          <keyword>femaleneks</keyword>
+          <path>Names/Animal_Female</path>
+        </li>
+
+        <li Class="Rule_File">
+          <keyword>nekbreed</keyword>
+          <path>NekoNames/breed</path>
+        </li>
+        <li Class="Rule_File">
+          <keyword>nekcat</keyword>
+          <path>NekoNames/cat</path>
+        </li>
+      </rulesRaw>
+    </rulePack>
+  </RulePackDef>
+</Defs>

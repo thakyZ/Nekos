@@ -1,0 +1,834 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+  <ThingDef Name="NekoBaseGun" Abstract="True" ParentName="BaseWeapon">
+    <techLevel>Ultra</techLevel>
+    <smeltable>true</smeltable>
+    <thingCategories>
+      <li>WeaponsRanged</li>
+    </thingCategories>
+    <inspectorTabs>
+      <li>ITab_Art</li>
+    </inspectorTabs>
+    <comps>
+      <li>
+        <compClass>CompQuality</compClass>
+      </li>
+      <li Class="CompProperties_Art">
+        <nameMaker>NamerArtWeaponGun</nameMaker>
+        <descriptionMaker>ArtDescription_WeaponGun</descriptionMaker>
+        <minQualityForArtistic>Excellent</minQualityForArtistic>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef Name="NekoBaseMakeableGun" ParentName="NekoBaseGun" Abstract="True">
+    <recipeMaker>
+      <workSpeedStat>SmithingSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <recipeUsers>
+        <li>TableNekoMachining</li>
+      </recipeUsers>
+      <unfinishedThingDef>UnfinishedGun</unfinishedThingDef>
+      <researchPrerequisite>Gunsmithing</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+
+  <ThingDef Name="BaseNekoGun" ParentName="NekoBaseGun" Abstract="True">
+    <weaponTags>
+      <li>Gun</li>
+    </weaponTags>
+  </ThingDef>
+
+  <ThingDef Name="BaseNekoMakeableGun" ParentName="NekoBaseMakeableGun" Abstract="True">
+    <weaponTags>
+      <li>Gun</li>
+    </weaponTags>
+  </ThingDef>
+  <!-- ==================== neko rocket launcher ========================== -->
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_NekoRocket</defName>
+    <label>neko rocket</label>
+    <graphicData>
+      <texPath>Things/Item/Equipment/Weapons/Neko_Rocket_Big</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+    </graphicData>
+    <thingClass>Projectile_Explosive</thingClass>
+    <projectile>
+      <flyOverhead>false</flyOverhead>
+      <damageDef>Bomb</damageDef>
+      <damageAmountBase>80</damageAmountBase>
+      <explosionRadius>2.5</explosionRadius>
+      <speed>50</speed>
+      <stoppingPower>5</stoppingPower>
+    </projectile>
+  </ThingDef>
+  <ThingDef ParentName="NekoBaseGun">
+    <defName>Gun_NekoRocket</defName>
+    <label>neko missile launcher</label>
+    <description>A missle launcher of Neko design; typically used to destroy fortified positions or armored vehicles. Due to the focused nature of the explosives, the explosion radius is small compared to some other kinds of explosives.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/Weapons/nekomissile</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <Mass>5</Mass>
+      <AccuracyTouch>0.90</AccuracyTouch>
+      <AccuracyShort>0.90</AccuracyShort>
+      <AccuracyMedium>0.90</AccuracyMedium>
+      <AccuracyLong>0.90</AccuracyLong>
+      <RangedWeapon_Cooldown>4.5</RangedWeapon_Cooldown>
+    </statBases>
+    <recipeMaker>
+      <researchPrerequisite>NChargedShot</researchPrerequisite>
+    </recipeMaker>
+    <costList>
+      <Plasteel>50</Plasteel>
+      <Uranium>20</Uranium>
+      <Steel>75</Steel>
+      <ComponentSpacer>4</ComponentSpacer>
+      <ComponentIndustrial>10</ComponentIndustrial>
+    </costList>
+    <techLevel>Ultra</techLevel>
+    <destroyOnDrop>false</destroyOnDrop>
+    <weaponTags>
+      <li>NekoMissile</li>
+    </weaponTags>
+    <tradeTags>
+      <li>Exotic</li>
+    </tradeTags>
+    <tools>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>10</power>
+        <cooldownTime>1.9</cooldownTime>
+      </li>
+    </tools>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_NekoRocket</defaultProjectile>
+        <forcedMissRadius>3</forcedMissRadius>
+        <warmupTime>4.5</warmupTime>
+        <range>40</range>
+        <burstShotCount>1</burstShotCount>
+        <soundCast>NLaunchers</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+        <muzzleFlashScale>14</muzzleFlashScale>
+      </li>
+    </verbs>
+  </ThingDef>
+
+  <!-- ==================== neko shotgun ========================== -->
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_NekoShotgun</defName>
+    <label>shotgun blast</label>
+    <graphicData>
+      <texPath>Things/Item/Equipment/Weapons/Neko_Bullet_Shotgun</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <flyOverhead>false</flyOverhead>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>35</damageAmountBase>
+      <speed>65</speed>
+      <stoppingPower>3</stoppingPower>
+      <armorPenetrationBase>0.1</armorPenetrationBase>
+    </projectile>
+  </ThingDef>
+  <ThingDef ParentName="BaseNekoMakeableGun">
+    <defName>Gun_NekoShotgun</defName>
+    <label>neko shotgun</label>
+    <description>Advanced design. Deadly, but short range.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/Weapons/nekoshotgun</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Interact_Shotgun</soundInteract>
+    <statBases>
+      <WorkToMake>15000</WorkToMake>
+      <Mass>3.4</Mass>
+      <AccuracyTouch>0.95</AccuracyTouch>
+      <AccuracyShort>0.8</AccuracyShort>
+      <AccuracyMedium>0.7</AccuracyMedium>
+      <AccuracyLong>0.5</AccuracyLong>
+      <RangedWeapon_Cooldown>0.66</RangedWeapon_Cooldown>
+    </statBases>
+    <recipeMaker>
+      <researchPrerequisite>NChargedShot</researchPrerequisite>
+    </recipeMaker>
+    <costList>
+      <Uranium>5</Uranium>
+      <Plasteel>75</Plasteel>
+      <Steel>75</Steel>
+      <ComponentSpacer>1</ComponentSpacer>
+      <ComponentIndustrial>3</ComponentIndustrial>
+    </costList>
+    <techLevel>Ultra</techLevel>
+    <weaponTags>
+      <li>NekoShotgun</li>
+    </weaponTags>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>10</power>
+        <cooldownTime>1.8</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>12</power>
+        <cooldownTime>1.9</cooldownTime>
+      </li>
+    </tools>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_NekoShotgun</defaultProjectile>
+        <warmupTime>0.8</warmupTime>
+        <range>20</range>
+        <soundCast>NShotgun</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>12</muzzleFlashScale>
+      </li>
+    </verbs>
+  </ThingDef>
+
+  <!-- ==================== neko rifle ========================== -->
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_NekoRifle</defName>
+    <label>charge shot</label>
+    <graphicData>
+      <texPath>Things/Item/Equipment/Weapons/Neko_Bullet_Rifle</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <flyOverhead>false</flyOverhead>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>14</damageAmountBase>
+      <speed>120</speed>
+
+      <stoppingPower>1.5</stoppingPower>
+    </projectile>
+  </ThingDef>
+  <ThingDef ParentName="BaseNekoMakeableGun">
+    <defName>Gun_NekoRifle</defName>
+    <label>neko rifle</label>
+    <description>Charged-shot energy/projectile rifle. Neko design.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/Weapons/nekorifle</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Interact_ChargeRifle</soundInteract>
+    <statBases>
+      <WorkToMake>45000</WorkToMake>
+      <Mass>4</Mass>
+      <AccuracyTouch>0.7</AccuracyTouch>
+      <AccuracyShort>0.8</AccuracyShort>
+      <AccuracyMedium>0.85</AccuracyMedium>
+      <AccuracyLong>0.75</AccuracyLong>
+      <RangedWeapon_Cooldown>0.66</RangedWeapon_Cooldown>
+    </statBases>
+    <recipeMaker>
+      <researchPrerequisite>NChargedShot</researchPrerequisite>
+    </recipeMaker>
+    <costList>
+      <Uranium>5</Uranium>
+      <Steel>100</Steel>
+      <Plasteel>100</Plasteel>
+      <ComponentSpacer>1</ComponentSpacer>
+      <ComponentIndustrial>5</ComponentIndustrial>
+    </costList>
+    <techLevel>Ultra</techLevel>
+    <weaponTags>
+      <li>NekoRifle</li>
+    </weaponTags>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>10</power>
+        <cooldownTime>1.8</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>12</power>
+        <cooldownTime>1.9</cooldownTime>
+      </li>
+    </tools>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_NekoRifle</defaultProjectile>
+        <warmupTime>.9</warmupTime>
+        <range>36</range>
+        <ticksBetweenBurstShots>10</ticksBetweenBurstShots>
+        <burstShotCount>4</burstShotCount>
+        <soundCast>NRifle</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+  </ThingDef>
+
+  <!-- ==================== neko sniper ========================== -->
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_nekoSniper</defName>
+    <label>neko lance shot</label>
+    <graphicData>
+      <texPath>Things/Item/Equipment/Weapons/Neko_Bullet_Sniper</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <flyOverhead>false</flyOverhead>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>50</damageAmountBase>
+      <speed>150</speed>
+      <stoppingPower>5</stoppingPower>
+    </projectile>
+  </ThingDef>
+  <ThingDef ParentName="BaseNekoMakeableGun">
+    <defName>Gun_NekoSniper</defName>
+    <label>neko sniper</label>
+    <description>Charged-shot rail-assisted lance weapon. Fires a single charged shot at high velocity. Neko design.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/Weapons/nekosniper</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <WorkToMake>50000</WorkToMake>
+      <Mass>4</Mass>
+      <AccuracyTouch>0.5</AccuracyTouch>
+      <AccuracyShort>0.7</AccuracyShort>
+      <AccuracyMedium>0.8</AccuracyMedium>
+      <AccuracyLong>.9</AccuracyLong>
+      <RangedWeapon_Cooldown>2</RangedWeapon_Cooldown>
+    </statBases>
+    <recipeMaker>
+      <researchPrerequisite>NChargedShot</researchPrerequisite>
+    </recipeMaker>
+    <costList>
+      <Uranium>5</Uranium>
+      <Steel>75</Steel>
+      <Plasteel>75</Plasteel>
+      <ComponentSpacer>2</ComponentSpacer>
+      <ComponentIndustrial>10</ComponentIndustrial>
+    </costList>
+    <techLevel>Ultra</techLevel>
+    <weaponTags>
+      <li>NekoSniper</li>
+    </weaponTags>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_nekoSniper</defaultProjectile>
+        <warmupTime>1.4</warmupTime>
+        <range>50</range>
+        <burstShotCount>1</burstShotCount>
+        <soundCast>NSniper</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+  </ThingDef>
+
+  <!-- ==================== neko pistols ========================== -->
+  <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_nekopistol</defName>
+    <label>neko pistol shot</label>
+    <graphicData>
+      <texPath>Things/Item/Equipment/Weapons/Neko_Bullet_Pistol</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <flyOverhead>false</flyOverhead>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>12</damageAmountBase>
+      <speed>90</speed>
+
+      <stoppingPower>1</stoppingPower>
+    </projectile>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseNekoMakeableGun">
+    <defName>Gun_NekoPistol</defName>
+    <label>Neko pistol</label>
+    <description>Charged-shot high energy/projectile pistol. Neko design.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/Weapons/nekopistol</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Interact_ChargeRifle</soundInteract>
+    <statBases>
+      <WorkToMake>6000</WorkToMake>
+
+      <Mass>1</Mass>
+      <AccuracyTouch>0.8</AccuracyTouch>
+      <AccuracyShort>0.7</AccuracyShort>
+      <AccuracyMedium>0.5</AccuracyMedium>
+      <AccuracyLong>.5</AccuracyLong>
+      <RangedWeapon_Cooldown>.4</RangedWeapon_Cooldown>
+    </statBases>
+    <recipeMaker>
+      <researchPrerequisite>NChargedShot</researchPrerequisite>
+    </recipeMaker>
+    <costList>
+      <Uranium>1</Uranium>
+      <Steel>10</Steel>
+      <Plasteel>10</Plasteel>
+      <ComponentSpacer>1</ComponentSpacer>
+      <ComponentIndustrial>2</ComponentIndustrial>
+    </costList>
+    <techLevel>Ultra</techLevel>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_nekopistol</defaultProjectile>
+        <warmupTime>.2</warmupTime>
+        <range>25</range>
+        <burstShotCount>1</burstShotCount>
+        <soundCast>NPistol</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <weaponTags>
+      <li>NekoPistol</li>
+    </weaponTags>
+    <tools>
+      <li>
+        <label>grip</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>8</power>
+        <cooldownTime>1.6</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>8</power>
+        <cooldownTime>1.6</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_nekoAE</defName>
+    <label>neko heavy pistol shot</label>
+    <graphicData>
+      <texPath>Things/Item/Equipment/Weapons/Neko_Bullet_Rifle</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <flyOverhead>false</flyOverhead>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>30</damageAmountBase>
+      <speed>150</speed>
+
+      <stoppingPower>3</stoppingPower>
+    </projectile>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseNekoMakeableGun">
+    <defName>Gun_NekoAEPistol</defName>
+    <label>Neko Tundra Falcon</label>
+    <description>Charged-shot high energy/projectile pistol. Neko design. For when you need to shoot someone in your back yard... through your house. Less accurate, but packs a punch.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/Weapons/nekoheavypistol</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Interact_ChargeRifle</soundInteract>
+    <statBases>
+      <WorkToMake>7500</WorkToMake>
+
+      <Mass>2</Mass>
+      <AccuracyTouch>0.7</AccuracyTouch>
+      <AccuracyShort>0.6</AccuracyShort>
+      <AccuracyMedium>0.5</AccuracyMedium>
+      <AccuracyLong>.4</AccuracyLong>
+      <RangedWeapon_Cooldown>.5</RangedWeapon_Cooldown>
+    </statBases>
+    <recipeMaker>
+      <researchPrerequisite>NChargedShot</researchPrerequisite>
+    </recipeMaker>
+    <costList>
+      <Uranium>3</Uranium>
+      <Steel>25</Steel>
+      <Plasteel>25</Plasteel>
+      <ComponentSpacer>1</ComponentSpacer>
+      <ComponentIndustrial>3</ComponentIndustrial>
+    </costList>
+    <techLevel>Ultra</techLevel>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_nekoAE</defaultProjectile>
+        <warmupTime>.75</warmupTime>
+        <range>28</range>
+        <burstShotCount>1</burstShotCount>
+        <soundCast>NTFalcon</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>11</muzzleFlashScale>
+      </li>
+    </verbs>
+    <weaponTags>
+      <li>NekoPistol</li>
+    </weaponTags>
+    <tools>
+      <li>
+        <label>grip</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>10</power>
+        <cooldownTime>1.6</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>8</power>
+        <cooldownTime>1.6</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+  <!-- ==================== neko SMG ========================== -->
+
+  <ThingDef ParentName="BaseNekoMakeableGun">
+    <defName>Gun_NekoSMG</defName>
+    <label>Neko SMG</label>
+    <description>Charged-shot high energy/projectile SMG. Neko design. Deadly in close range engagements and excellent for flanking maneuvers. It uses the same ammunition as the pistol.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/Weapons/nekoSMG</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Interact_ChargeRifle</soundInteract>
+    <statBases>
+      <WorkToMake>26000</WorkToMake>
+
+      <Mass>3.75</Mass>
+      <AccuracyTouch>0.9</AccuracyTouch>
+      <AccuracyShort>0.72</AccuracyShort>
+      <AccuracyMedium>0.5</AccuracyMedium>
+      <AccuracyLong>.35</AccuracyLong>
+      <RangedWeapon_Cooldown>1.4</RangedWeapon_Cooldown>
+    </statBases>
+    <recipeMaker>
+      <researchPrerequisite>NChargedShot</researchPrerequisite>
+    </recipeMaker>
+    <costList>
+      <Uranium>2</Uranium>
+      <Steel>40</Steel>
+      <Plasteel>20</Plasteel>
+      <ComponentSpacer>1</ComponentSpacer>
+      <ComponentIndustrial>3</ComponentIndustrial>
+    </costList>
+    <techLevel>Ultra</techLevel>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_nekopistol</defaultProjectile>
+        <warmupTime>.7</warmupTime>
+        <range>25</range>
+        <burstShotCount>5</burstShotCount>
+        <ticksBetweenBurstShots>3</ticksBetweenBurstShots>
+        <soundCast>NPistol</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <weaponTags>
+      <li>NekoSMG</li>
+    </weaponTags>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>8</power>
+        <cooldownTime>1.6</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>8</power>
+        <cooldownTime>1.6</cooldownTime>
+      </li>
+    </tools>
+  </ThingDef>
+
+  <!-- ==================== neko LMG ========================== -->
+
+  <ThingDef ParentName="BaseNekoMakeableGun">
+    <defName>Gun_NekoLMG</defName>
+    <label>Neko lmg</label>
+    <description>Charged-shot blaster for area suppressive fire. Neko design.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/Weapons/nekolmg</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Interact_ChargeRifle</soundInteract>
+    <statBases>
+      <WorkToMake>35000</WorkToMake>
+      <Mass>10</Mass>
+      <AccuracyTouch>0.5</AccuracyTouch>
+      <AccuracyShort>0.6</AccuracyShort>
+      <AccuracyMedium>0.6</AccuracyMedium>
+      <AccuracyLong>.4</AccuracyLong>
+      <RangedWeapon_Cooldown>1.5</RangedWeapon_Cooldown>
+    </statBases>
+    <recipeMaker>
+      <researchPrerequisite>NChargedShot</researchPrerequisite>
+    </recipeMaker>
+    <costList>
+      <Uranium>10</Uranium>
+      <Steel>200</Steel>
+      <Plasteel>150</Plasteel>
+      <ComponentSpacer>3</ComponentSpacer>
+      <ComponentIndustrial>10</ComponentIndustrial>
+    </costList>
+    <techLevel>Ultra</techLevel>
+    <weaponTags>
+      <li>NekoLMG</li>
+    </weaponTags>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>10</power>
+        <cooldownTime>1.8</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>12</power>
+        <cooldownTime>1.9</cooldownTime>
+      </li>
+    </tools>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_NekoRifle</defaultProjectile>
+        <warmupTime>1.3</warmupTime>
+        <range>40</range>
+        <burstShotCount>10</burstShotCount>
+        <ticksBetweenBurstShots>5</ticksBetweenBurstShots>
+        <soundCast>NLMG</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+      </li>
+    </verbs>
+  </ThingDef>
+
+  <!-- ==================== cryogenic launcher ========================== -->
+
+  <ThingDef ParentName="BaseBullet">
+    <defName>Bullet_CryoLauncher</defName>
+    <label>cryo bolt</label>
+    <graphicData>
+      <texPath>Things/Item/Equipment/Weapons/CryoCannonShot</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+    </graphicData>
+    <thingClass>Neko.Projectile_SnowMaker</thingClass>
+    <projectile>
+      <flyOverhead>false</flyOverhead>
+      <speed>40</speed>
+      <damageDef>OFrostbite</damageDef>
+      <damageAmountBase>15</damageAmountBase>
+      <explosionRadius>4</explosionRadius>
+
+      <stoppingPower>2</stoppingPower>
+    </projectile>
+  </ThingDef>
+
+  <DamageDef >
+    <defName>OFrostbite</defName>
+    <label>frostbite</label>
+    <workerClass>DamageWorker_AddInjury</workerClass>
+    <externalViolence>true</externalViolence>
+    <deathMessage>{0} has succumbed to frostbite.</deathMessage>
+    <hediff>Frostbite</hediff>
+    <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+    <armorCategory>Heat</armorCategory>
+    <explosionCellMote>Mote_BlastFlame</explosionCellMote>
+    <explosionColorCenter>(1, 0.7, 0.7)</explosionColorCenter>
+    <explosionColorEdge>(1, 1, 0.7)</explosionColorEdge>
+    <soundExplosion>Explosion_Flame</soundExplosion>
+  </DamageDef>
+
+  <ThingDef ParentName="BaseNekoMakeableGun">
+    <defName>Gun_CryoLauncher</defName>
+    <label>cryogenic launcher</label>
+    <description>Cryogenic bolt launcher. Creates snow and causes frostbite. It was designed during the Neko-Ni'Hal conflict to combat the Ni'Hal, who did not fare well in the cold.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/Weapons/CryoLauncher</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <statBases>
+      <WorkToMake>12000</WorkToMake>
+      <Mass>4</Mass>
+      <AccuracyTouch>0.8</AccuracyTouch>
+      <AccuracyShort>0.65</AccuracyShort>
+      <AccuracyMedium>0.45</AccuracyMedium>
+      <AccuracyLong>0.25</AccuracyLong>
+      <RangedWeapon_Cooldown>2</RangedWeapon_Cooldown>
+    </statBases>
+    <recipeMaker>
+      <researchPrerequisite>NChargedShot</researchPrerequisite>
+    </recipeMaker>
+    <costList>
+      <Uranium>10</Uranium>
+      <Plasteel>100</Plasteel>
+      <Steel>100</Steel>
+      <ComponentSpacer>3</ComponentSpacer>
+      <ComponentIndustrial>5</ComponentIndustrial>
+    </costList>
+    <techLevel>Ultra</techLevel>
+    <weaponTags>
+      <li>NekoCryo</li>
+    </weaponTags>
+    <tools>
+      <li>
+        <label>stock</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>1.8</cooldownTime>
+      </li>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>10</power>
+        <cooldownTime>1.9</cooldownTime>
+      </li>
+    </tools>
+    <verbs>
+      <li>
+        <ai_AvoidFriendlyFireRadius>8</ai_AvoidFriendlyFireRadius>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_CryoLauncher</defaultProjectile>
+        <warmupTime>4</warmupTime>
+        <range>35</range>
+        <burstShotCount>1</burstShotCount>
+        <soundCast>NLaunchers</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+        <muzzleFlashScale>14</muzzleFlashScale>
+      </li>
+    </verbs>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseMeleeWeapon_Sharp_Quality">
+    <defName>MeleeWeapon_nekoclaws</defName>
+    <label>neko sabre</label>
+    <description>A high tech version of an ancient weapon. Typically used by front line soldiers, but mercenaries can get their hands on these. Can cut through just about anything.</description>
+    <graphicData>
+      <texPath>Things/Item/Equipment/Weapons/nekoclaws</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <techLevel>Spacer</techLevel>
+    <weaponTags>
+      <li>NonNeolithicOnlyMelee</li>
+      <li>NekoMelee</li>
+    </weaponTags>
+    <costList>
+      <Plasteel>125</Plasteel>
+      <ComponentSpacer>1</ComponentSpacer>
+    </costList>
+    <statBases>
+      <WorkToMake>10000</WorkToMake>
+      <Mass>1.6</Mass>
+    </statBases>
+    <equippedAngleOffset>-65</equippedAngleOffset>
+    <tools>
+      <li>
+        <label>hand guard</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>10</power>
+        <cooldownTime>2.5</cooldownTime>
+      </li>
+      <li>
+        <label>point</label>
+        <capacities>
+          <li>Stab</li>
+        </capacities>
+        <power>25</power>
+        <cooldownTime>2.5</cooldownTime>
+      </li>
+      <li>
+        <label>edge</label>
+        <capacities>
+          <li>Cut</li>
+        </capacities>
+        <power>32</power>
+        <cooldownTime>2.5</cooldownTime>
+      </li>
+    </tools>
+    <recipeMaker>
+      <researchPrerequisite>LongBlades</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+
+</Defs>

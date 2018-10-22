@@ -1,0 +1,15 @@
+<Defs>
+  <ThoughtDef>
+    <defName>NekoFoodOnHuman</defName>
+    <durationDays>1.0</durationDays>
+    <stackLimit>1</stackLimit>
+    <stackedEffectMultiplier>1</stackedEffectMultiplier>
+    <stages>
+      <li>
+        <label>Hairy food</label>
+        <description>There's hair in my food...</description>
+        <baseMoodEffect>-2</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+</Defs>

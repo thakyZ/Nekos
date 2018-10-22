@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/FactionDef[@Name="OutlanderFactionBase"]/pawnGroupMakers/li[1]/options</xpath>  <!-- Outlander "normal" group -->
+		<value>
+			<NekoMercenarySoldier>3</NekoMercenarySoldier>    <!-- Pawnkinds from your race, keep points down low to avoid making your pawns a majority -->
+			<NekoMercenarySniper>3</NekoMercenarySniper>
+			<NekoMercenaryGunner>1</NekoMercenaryGunner>      <!-- The more rare, the lower your points should be -->
+		</value>
+	</Operation> 
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/FactionDef[@Name="OutlanderFactionBase"]/pawnGroupMakers/li[3]/guards</xpath>  <!-- Outlander Caravan guard group -->
+		<value>
+			<NekoMercenarySoldier>3</NekoMercenarySoldier>    <!-- Pawnkinds from your race, keep points down low to avoid making your pawns a majority -->
+			<NekoMercenarySniper>3</NekoMercenarySniper>
+			<NekoMercenaryGunner>1</NekoMercenaryGunner>  
+		</value>
+	</Operation> 
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/FactionDef[@Name="OutlanderFactionBase"]/pawnGroupMakers/li[4]/options</xpath>  <!-- Outlander base group -->
+		<value>
+			<NekoMercenarySoldier>3</NekoMercenarySoldier>    <!-- Pawnkinds from your race, keep points down low to avoid making your pawns a majority -->
+			<NekoMercenarySniper>3</NekoMercenarySniper>
+			<NekoMercenaryGunner>1</NekoMercenaryGunner>  
+		</value>
+	</Operation> 
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/FactionDef[defName = "Pirate"]/pawnGroupMakers/li[1]/options</xpath>  <!-- Pirate "normal" group -->
+		<value>
+			<NekoPirate>3</NekoPirate>
+			<NekoPirateSlasher>2</NekoPirateSlasher>
+			<NekoMercenarySoldier>1</NekoMercenarySoldier> 
+		</value>
+	</Operation> 
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/FactionDef[defName = "Pirate"]/pawnGroupMakers/li[2]/options</xpath>  <!-- Pirate "normal" melee only group -->
+		<value>
+			<NekoPirateSlasher>5</NekoPirateSlasher>
+		</value>
+	</Operation> 
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/FactionDef[defName = "Pirate"]/pawnGroupMakers/li[7]/options</xpath>  <!-- Pirate base group -->
+		<value>
+			<NekoPirate>5</NekoPirate>
+			<NekoPirateSlasher>2</NekoPirateSlasher>
+			<NekoMercenarySoldier>1</NekoMercenarySoldier> 
+		</value>
+	</Operation> 
+	
+</Patch>

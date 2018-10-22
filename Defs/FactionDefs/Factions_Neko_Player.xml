@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <FactionDef Abstract="True" Name="NekoFactionBase">
+    <homeIconPath>World/WorldObjects/DefaultSettlement</homeIconPath>
+    <colorSpectrum>
+      <li>(0, 0.737, 0.847)</li>
+    </colorSpectrum>
+  </FactionDef>
+
+  <FactionDef Parent="NekoFactionBase">
+    <defName>NekoPlayerColony</defName>
+    <label>Neko Society</label>
+    <description>Your own community.</description>
+    <isPlayer>true</isPlayer>
+    <basicMemberKind>Neko</basicMemberKind>
+    <pawnsPlural>colonists</pawnsPlural>
+    <pawnNameMaker>NamerPersonNeko</pawnNameMaker>
+    <techLevel>Ultra</techLevel>
+    <backstoryCategories>
+      <li>Neko</li>
+    </backstoryCategories>
+    <homeIconPath>World/NekoBaseIcon</homeIconPath>
+    <expandingIconTexture>World/WorldObjects/Expanding/Town</expandingIconTexture>
+    <playerInitialSettlementNameMaker>NamerInitialSettlementColony</playerInitialSettlementNameMaker>
+    <factionNameMaker>NamerFactionOutlander</factionNameMaker>
+    <settlementNameMaker>NamerSettlementOutlander</settlementNameMaker>
+    <geneticVariance>1</geneticVariance>
+    <startingResearchTags>
+      <li>ClassicStart</li>
+    </startingResearchTags>
+    <hairTags>
+      <li>Urban</li>
+    </hairTags>
+    <apparelStuffFilter>
+      <thingDefs>
+        <li>Synthread</li>
+      </thingDefs>
+    </apparelStuffFilter>
+  </FactionDef>
+</Defs>

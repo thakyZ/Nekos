@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<ThinkTreeDef>
+		<defName>Insert_NekoNuzzle</defName>
+		<insertTag>Humanlike_PostMain</insertTag>
+		<insertPriority>100</insertPriority>
+		<thinkRoot Class="ThinkNode_ConditionalHasFaction">
+			<subNodes>
+				<li Class="ThinkNode_ConditionalOfPlayerFaction">
+					<subNodes>
+						<li Class="Neko.ThinkNode_ConditionalIsNeko">
+							<subNodes>
+								<li Class="ThinkNode_ChancePerHour_Nuzzle">
+									<subNodes>
+										<li Class="Neko.JobGiver_NekoNuzzle"/>
+									</subNodes>
+								</li>
+							</subNodes>
+						</li>
+					</subNodes>
+				</li>
+			</subNodes>
+		</thinkRoot>
+	</ThinkTreeDef>
+</Defs>
