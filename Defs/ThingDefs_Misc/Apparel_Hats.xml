@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
   <ThingDef ParentName="ArmorHelmetMakeableBase">
-    <defName>Apparel_NekoSacriArmorHelmet</defName>
-    <label>Neko S.A.C.R.I Helmet</label>
-    <description>This insulating helmet is part of the S.A.C.R.I suit set. Equipped with oxygen filter and a scanner with a system of identifying objects, including hostile lifeforms. Not intended for combat.</description>
+    <defName>Apparel_NekoTier1AHelmet</defName>
+    <label>Active Neko Helmet</label>
+    <description>This Neko Helmet is primarily worn by active Nekos in combat and are made specially designed with mobility in mind.</description>
     <techLevel>Spacer</techLevel>
     <recipeMaker>
       <unfinishedThingDef>UnfinishedTechArmor</unfinishedThingDef>
@@ -13,7 +13,7 @@
       </recipeUsers>
     </recipeMaker>
     <graphicData>
-      <texPath>Things/Pawn/Humanlike/Apparel/NekoSacriSuit/nekoSacrihat</texPath>
+      <texPath>Things/Pawn/Humanlike/Apparel/NekoTier1Active/nekotier1ahat</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <statBases>
@@ -43,7 +43,7 @@
       <bodyPartGroups>
         <li>FullHead</li>
       </bodyPartGroups>
-      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/NekoSacriSuit/nekoSacrihat</wornGraphicPath>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/NekoTier1Active/nekotier1ahat</wornGraphicPath>
       <layers>
         <li>Overhead</li>
       </layers>
@@ -57,8 +57,8 @@
   </ThingDef>
 
   <ThingDef ParentName="ArmorHelmetMakeableBase">
-    <defName>Apparel_NekoPowerArmorHelmet</defName>
-    <label>Neko Exoskeleton Helmet</label>
+    <defName>Apparel_NekoTier1FHelmet</defName>
+    <label>Fused Neko Helmet</label>
     <description>A part of powered exoskeleton armor set, mostly used by Neko infantry. Has advanced sensors and translation softer, improving combat effectiveness and negotiating skills.</description>
     <techLevel>Spacer</techLevel>
     <recipeMaker>
@@ -69,7 +69,7 @@
       </recipeUsers>
     </recipeMaker>
     <graphicData>
-      <texPath>Things/Pawn/Humanlike/Apparel/NekoPoweredExoskeleton/nekohat</texPath>
+      <texPath>Things/Pawn/Humanlike/Apparel/NekoTier1Fused/nekotier1fhat</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <statBases>
@@ -99,7 +99,63 @@
       <bodyPartGroups>
         <li>FullHead</li>
       </bodyPartGroups>
-      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/NekoPoweredExoskeleton/nekohat</wornGraphicPath>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/NekoTier1Fused/nekotier1fhat</wornGraphicPath>
+      <layers>
+        <li>Overhead</li>
+      </layers>
+      <tags>
+        <li>NekoMilitary</li>
+      </tags>
+      <defaultOutfitTags>
+        <li>Soldier</li>
+      </defaultOutfitTags>
+    </apparel>
+  </ThingDef>
+
+  <ThingDef ParentName="ArmorHelmetMakeableBase">
+    <defName>Apparel_NekoTier1PHelmet</defName>
+    <label>Passive Neko Helmet</label>
+    <description>A part of powered exoskeleton armor set, mostly used by Neko infantry. Has advanced sensors and translation softer, improving combat effectiveness and negotiating skills.</description>
+    <techLevel>Spacer</techLevel>
+    <recipeMaker>
+      <unfinishedThingDef>UnfinishedTechArmor</unfinishedThingDef>
+      <researchPrerequisite>NPoweredArmor</researchPrerequisite>
+      <recipeUsers>
+        <li>TableNekoMachining</li>
+      </recipeUsers>
+    </recipeMaker>
+    <graphicData>
+      <texPath>Things/Pawn/Humanlike/Apparel/NekoTier1Passive/nekotier1phat</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <WorkToMake>24000</WorkToMake>
+      <MaxHitPoints>250</MaxHitPoints>
+      <MarketValue>2250</MarketValue>
+      <Mass>2</Mass>
+      <ArmorRating_Blunt>0.5</ArmorRating_Blunt>
+      <ArmorRating_Sharp>1.2</ArmorRating_Sharp>
+      <ArmorRating_Heat>1</ArmorRating_Heat>
+      <Insulation_Cold>7</Insulation_Cold>
+      <Insulation_Heat>7</Insulation_Heat>
+    </statBases>
+    <equippedStatOffsets>
+      <ShootingAccuracyPawn>1</ShootingAccuracyPawn>
+      <AimingDelayFactor>-0.1</AimingDelayFactor>
+      <ToxicSensitivity>-0.10</ToxicSensitivity>
+      <PsychicSensitivity>-0.10</PsychicSensitivity>
+      <SocialImpact>0.10</SocialImpact>
+    </equippedStatOffsets>
+    <costList>
+      <ComponentSpacer>1</ComponentSpacer>
+      <ComponentIndustrial>4</ComponentIndustrial>
+      <Plasteel>50</Plasteel>
+    </costList>
+    <apparel>
+      <bodyPartGroups>
+        <li>FullHead</li>
+      </bodyPartGroups>
+      <wornGraphicPath>Things/Pawn/Humanlike/Apparel/NekoTier1Passive/nekotier1phat</wornGraphicPath>
       <layers>
         <li>Overhead</li>
       </layers>
