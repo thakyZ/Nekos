@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <TerrainDef Abstract="True" ParentName="FloorBase" Name="DurasteelTileBase">
+    <renderPrecedence>220</renderPrecedence>
+    <description>Durasteel nanofiber strand floor. Relatively , easy to pour, fireproof, and Soft.</description>
+    <texturePath>Things/Buildings/Durasteel/DuraFloor</texturePath>
+    <statBases>
+      <WorkToBuild>800</WorkToBuild>
+      <Beauty>0</Beauty>
+    </statBases>
+  </TerrainDef>
+
+  <TerrainDef Abstract="True" ParentName="FloorBase" Name="DurasteelTileSmoothBase">
+    <renderPrecedence>220</renderPrecedence>
+    <description>Hard yet smooth Durasteel foor. It's pretty to look at and sterile. Perfect for hospitals. Smoothing it out takes a lot of time though.</description>
+    <texturePath>Things/Buildings/Durasteel/SmoothDura</texturePath>
+    <statBases>
+      <WorkToBuild>1200</WorkToBuild>
+      <Beauty>1</Beauty>
+      <Cleanliness>0.2</Cleanliness>
+    </statBases>
+    <researchPrerequisites>
+      <li>SterileMaterials</li>
+    </researchPrerequisites>
+  </TerrainDef>
+
+  <TerrainDef ParentName="TileDurasteel">
+    <defName>TileDurasteel</defName>
+    <label>Nanofibre Durasteel Carpet</label>
+    <color>(255,255,255)</color>
+    <costList>
+      <Durasteel>4</Durasteel>
+    </costList>
+  </TerrainDef>
+
+  <TerrainDef ParentName="SmoothTileDurasteel">
+    <defName>SmoothTileDurasteel</defName>
+    <label>Durasteel Hard Flooring</label>
+    <color>(255,255,255)</color>
+    <costList>
+      <Durasteel>4</Durasteel>
+      <Steel>4</Steel>
+    </costList>
+  </TerrainDef>
+
+  <ThingDef ParentName="ResourceBase">
+    <defName>Durasteel</defName>
+    <label>durasteel</label>
+    <description>Processed steel made into durasteel.</description>
+    <graphicData>
+      <color>(255,255,255)</color>
+      <texPath>Things/Buildings/Durasteel/Durasteel</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>3</MarketValue>
+      <Mass>0.65</Mass>
+      <SharpDamageMultiplier>0.8</SharpDamageMultiplier>
+    </statBases>
+    <thingCategories>
+      <li>ResourcesRaw</li>
+    </thingCategories>
+    <stuffProps>
+      <categories>
+        <li>Stony</li>
+      </categories>
+      <color>(235,235,255)</color>
+      <soundImpactStuff>BulletImpact_Ground</soundImpactStuff>
+      <soundMeleeHitSharp>MeleeHit_Stone</soundMeleeHitSharp>
+      <soundMeleeHitBlunt>MeleeHit_Stone</soundMeleeHitBlunt>
+      <stuffAdjective>durasteel</stuffAdjective>
+      <statFactors>
+        <WorkToMake>1.2</WorkToMake>
+        <MarketValue>0.7</MarketValue>
+        <MaxHitPoints>2</MaxHitPoints>
+        <Flammability>0</Flammability>
+      </statFactors>
+      <appearance>Dura</appearance>
+    </stuffProps>
+  </ThingDef>
+
+  <RecipeDef>
+    <defName>MakeDurasteel</defName>
+    <label>make durasteel</label>
+    <description>Smelt steel and coal into durasteel.</description>
+    <workerCounterClass>RecipeWorkerCounter_Make</workerCounterClass>
+    <jobString>Pulverising from chunk.</jobString>
+    <workAmount>1600</workAmount>
+    <effectWorking>CutStone</effectWorking>
+    <soundWorking>Recipe_MakeStoneBlocks</soundWorking>
+    <recipeUsers>
+      <li>TableStonecutter</li>
+    </recipeUsers>
+    <allowMixingIngredients>true</allowMixingIngredients>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>StoneChunks</li>
+          </categories>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <categories>
+        <li>StoneChunks</li>
+      </categories>
+    </fixedIngredientFilter>
+    <products>
+      <RockPowder>20</RockPowder>
+    </products>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>MakeRockPowderMixer</defName>
+    <label>make rock powder</label>
+    <description>Grinds stone chunks into powder useable for Neo-Concrete.</description>
+    <workerCounterClass>RecipeWorkerCounter_MakeStoneBlocks</workerCounterClass>
+    <jobString>Pulverising from chunk.</jobString>
+    <workAmount>1000</workAmount>
+    <effectWorking>CutStone</effectWorking>
+    <soundWorking>Recipe_MakeStoneBlocks</soundWorking>
+    <allowMixingIngredients>true</allowMixingIngredients>
+    <recipeUsers>
+      <li>TableConcreteMixer</li>
+    </recipeUsers>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>StoneChunks</li>
+          </categories>
+        </filter>
+        <count>5</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <categories>
+        <li>StoneChunks</li>
+      </categories>
+    </fixedIngredientFilter>
+    <products>
+      <RockPowder>100</RockPowder>
+    </products>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>MakeNeoConcreteMix</defName>
+    <label>make neo-concrete mix</label>
+    <description>Prepare Neo-Concrete mix.</description>
+    <jobString>Mixing neo-concrete.</jobString>
+    <workAmount>1600</workAmount>
+    <effectWorking>CutStone</effectWorking>
+    <soundWorking>Recipe_MakeStoneBlocks</soundWorking>
+    <recipeUsers>
+      <li>TableStonecutter</li>
+    </recipeUsers>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>RockPowder</li>
+          </thingDefs>
+        </filter>
+        <count>10</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>RockPowder</li>
+        <li>Steel</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <NeoConcreteMix>20</NeoConcreteMix>
+    </products>
+  </RecipeDef>
+
+  <RecipeDef>
+    <defName>MakeNeoConcreteMixer</defName>
+    <label>make neo-concrete mix</label>
+    <description>Prepare Neo-Concrete mix.</description>
+    <jobString>Mixing neo-concrete.</jobString>
+    <workAmount>1000</workAmount>
+    <effectWorking>CutStone</effectWorking>
+    <soundWorking>Recipe_MakeStoneBlocks</soundWorking>
+    <recipeUsers>
+      <li>TableConcreteMixer</li>
+    </recipeUsers>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>RockPowder</li>
+          </thingDefs>
+        </filter>
+        <count>50</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>5</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>RockPowder</li>
+        <li>Steel</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <NeoConcreteMix>100</NeoConcreteMix>
+    </products>
+  </RecipeDef>
+
+  <WorkGiverDef>
+    <defName>DoBillsConcreteMix</defName>
+    <label>mix concrete</label>
+    <giverClass>WorkGiver_DoBill</giverClass>
+    <workType>Crafting</workType>
+    <priorityInType>90</priorityInType>
+    <fixedBillGiverDefs>
+      <li>TableConcreteMixer</li>
+    </fixedBillGiverDefs>
+    <verb>mixing</verb>
+    <gerund>mixing concrete at</gerund>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+    <prioritizeSustains>true</prioritizeSustains>
+  </WorkGiverDef>
+</Defs>
