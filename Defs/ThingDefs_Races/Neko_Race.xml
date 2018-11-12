@@ -36,7 +36,7 @@
       dark or being ineast for long periods of time.</description>
     <alienRace>
       <generalSettings>
-        <maleGenderProbability>0.3</maleGenderProbability>
+        <maleGenderProbability>0.5</maleGenderProbability>
         <forcedRaceTraitEntries>
           <li>
             <defName>Beauty</defName>
@@ -53,20 +53,6 @@
             <chance>50</chance>
           </li>
           <li>
-            <defName>Nudist</defName>
-            <chance>10</chance>
-          </li>
-          <li>
-            <defName>Xenophobia</defName>
-            <degree>1</degree>
-            <chance>0</chance>
-          </li>
-          <li>
-            <defName>Xenophobia</defName>
-            <degree>-1</degree>
-            <chance>10</chance>
-          </li>
-          <li>
             <defName>Nimble</defName>
             <chance>35</chance>
           </li>
@@ -78,7 +64,6 @@
             <li>Average_Normal</li>
           </aliencrowntypes>
           <alienbodytypes>
-            <li>Hulk</li>
             <li>Thin</li>
             <li>Male</li>
             <li>Female</li>
@@ -267,6 +252,7 @@
 
       <graphicPaths>
         <li>
+          <body>Things/Neko/Bodies/</body>
           <head>Things/Neko/Heads/</head>
           <skeleton>Things/Pawn/Humanlike/Bodies/Dessicated/Dessicated_Thin</skeleton>
         </li>
