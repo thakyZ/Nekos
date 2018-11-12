@@ -3,7 +3,7 @@
   <ModName>Nekos</ModName>
   <Version>1.0.0.0</Version>
   <SaveBreaking>False</SaveBreaking>
-  <Host name="Gitlab">
+  <Host name="Github">
     <Owner>thakyZ</Owner>
     <Project>Nekos</Project>
     <DownloadFrom>ModSyncReleases</DownloadFrom>
