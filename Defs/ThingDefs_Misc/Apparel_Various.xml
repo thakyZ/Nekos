@@ -61,7 +61,7 @@
  <ThingDef ParentName="NArmorMakeableBase">
     <defName>Apparel_NekoTier1ASuit</defName>
     <label>Active Neko Armored Suit</label>
-    <description>This special protective suit is the most popular choice among the Orassan scientists and hazardous areas explorers. Made of special coating with high-tech fibers, it gives the wearer an exceptionally high protection against many negative impact excluding kinetic damage. Soldered inside the armor vest partly solves this problem. Its name was received because of the new system S.A.C.R.I. (System of abnormal, chemical, radiation isolation.).</description>
+    <description>This special protective suit is the most popular choice among the Neko scientists and hazardous areas explorers. Made of special coating with high-tech fibers, it gives the wearer an exceptionally high protection against many negative impact excluding kinetic damage. Soldered inside the armor vest partly solves this problem. Its name was received because of the new system S.A.C.R.I. (System of abnormal, chemical, radiation isolation.).</description>
     <techLevel>Ultra</techLevel>
     <recipeMaker>
       <unfinishedThingDef>UnfinishedTechArmor</unfinishedThingDef>
@@ -119,7 +119,7 @@
  <ThingDef ParentName="NArmorMakeableBase">
     <defName>Apparel_NekoTier1FSuit</defName>
     <label>Fused Neko Armored Suit</label>
-    <description>Exoskeletal armor usually used by assault troops from The Orassan Empire.\n\nSlim and advanced, and the advanced servo-motors greatly increase the wearer's load bearing capacity and assist in weapon-handling.</description>
+    <description>Exoskeletal armor usually used by assault troops from The Neko Empire.\n\nSlim and advanced, and the advanced servo-motors greatly increase the wearer's load bearing capacity and assist in weapon-handling.</description>
     <techLevel>Ultra</techLevel>
     <recipeMaker>
       <unfinishedThingDef>UnfinishedTechArmor</unfinishedThingDef>
@@ -176,7 +176,7 @@
   <ThingDef ParentName="NArmorMakeableBase">
     <defName>Apparel_NekoTier1PSuit</defName>
     <label>Passive Neko Armored Suit</label>
-    <description>Exoskeletal armor usually used by assault troops from The Orassan Empire.\n\nSlim and advanced, and the advanced servo-motors greatly increase the wearer's load bearing capacity and assist in weapon-handling. This version is lightly armored to reduce weight and cost.</description>
+    <description>Exoskeletal armor usually used by assault troops from The Neko Empire.\n\nSlim and advanced, and the advanced servo-motors greatly increase the wearer's load bearing capacity and assist in weapon-handling. This version is lightly armored to reduce weight and cost.</description>
     <techLevel>Ultra</techLevel>
     <recipeMaker>
       <unfinishedThingDef>UnfinishedTechArmor</unfinishedThingDef>
