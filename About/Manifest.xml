@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Manifest>
+  <identifier>Nekos</identifier>
+  <version>1.0.0.0</version>
+  <dependencies>
+    <li>HumanoidAlienRaces2.0</li>
+  </dependencies>
+  <incompatibleWith />
+  <loadBefore />
+  <loadAfter>
+    <li>HugsLib</li>
+    <li>HumanoidAlienRaces2.0</li>
+  </loadAfter>
+  <manifestUri>https://raw.githubusercontent.com/thakyZ/Nekos/master/About/Manifest.xml</manifestUri>
+  <downloadUri>https://github.com/thakyZ/Nekos/releases</downloadUri>
+</Manifest>
